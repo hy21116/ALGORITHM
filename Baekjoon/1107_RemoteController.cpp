@@ -54,43 +54,36 @@ int main(){
 	for (int i = 0; i < brokenNum; i++)
 		scanf("%d", &broken[i]);
 
-	// case 2 : use both case 3 & case 1 methods
 	int result, tempNum; 
 	int diff = 500000; 
-	if (N > 100){
-		for (tempNum = 0;; tempNum++){
-			// initialize digit array
-			for (int i = 0; i < 6; i++)
-				digit[i] = 0;
-			getDigits(tempNum);
-			if (checkBroken(tempNum) == 1) continue;  // if tempNum has a broken button, go to the next case.
-			if (diff >= abs(N, tempNum))
-				diff = abs(N, tempNum);
-			else if(diff < abs(N, tempNum)) break;
-		}
-		if (checkBroken((N - diff)) == 1){
-			if (checkBroken(N + diff) == 1){
-
+	
+	if (brokenNum == 10){
+		result = abs(N, 100);
+	}
+	if (brokenNum == 0){
+		result = getDigitNum(N);
+	}
+	else{
+		if (N != 100){
+			for (tempNum = 0;; tempNum++){
+				// initialize digit array
+				for (int i = 0; i < 6; i++)
+					digit[i] = 0;
+				getDigits(tempNum);
+				if (checkBroken(tempNum) == 1) continue;  // if tempNum has a broken button, go to the next case.
+				if (diff >= abs(N, tempNum))
+					diff = abs(N, tempNum);
+				else if (diff < abs(N, tempNum)) break;
+			}
+			if (checkBroken((N - diff)) == 1){
+				result = getDigitNum(N + diff) + diff;
 			}
 			else
-				result = getDigitNum(N + diff) + diff;
+				result = getDigitNum(N - diff) + diff;
 		}
-		//result = getDigitNum(N - diff) + diff;
-	}
-	else if (N < 100){
-		for (tempNum = 99; tempNum >= 0; tempNum--){
-			// initialize digit array
-			for (int i = 0; i < 6; i++)
-				digit[i] = 0;
-			getDigits(tempNum);
-			if (checkBroken(tempNum) == 1) continue;
-			if (diff > abs(tempNum, N))
-				diff = tempNum - N;
+		else{  //  case : N(channel) = 100  (to reduce the time)
+			result = 0;
 		}
-		result = getDigitNum(N + diff) + diff;
-	}
-	else{  //  case : N(channel) = 100
-		result = 0;
 	}
 
 	// Compare the case.
