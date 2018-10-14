@@ -1,95 +1,54 @@
 #include <stdio.h>
 
-int N, brokenNum, digitNum;
-int broken[10];
-int digit[6];
+int N, brokenNum;
+bool broken[10];
 
-int pow(int x, int y){
-	int value = 1;
-	for (int i = 0; i < y; i++)
-		value = value * x;
-	return value;
+// check if is is possible to move the channel using only number buttons.
+// if it is possible : 1, if it is not possible : 0
+int checkNumButton(int channel){
+	if (channel == 0){
+		if (broken[0])
+			return 0;
+		return 1;
+	}
+	int digitNum = 0;
+	while (channel > 0){
+		if (broken[channel % 10])
+			return 0;
+		digitNum += 1;
+		channel /= 10;
+	}
+	return digitNum;
 }
 
-int abs(int x, int y){
-	if (x >= y)
-		return (x - y);
+int abs(int x){
+	if (x >= 0)
+		return x;
 	else
-		return (y - x);
+		return -x;
 }
-
-int getDigitNum(int x){
-	int tenNum = 5;
-	while (x % pow(10, tenNum) == x){
-		tenNum--;
-		if (tenNum == 0) break;
-	}
-	return (tenNum + 1);
-}
-
-void getDigits(int x){
-	int digitNum = getDigitNum(x);
-	int tmp = digitNum - 1;
-	for (int j = 0; j <= digitNum; j++){
-		digit[j] = x / pow(10, tmp);
-		x = x % pow(10, tmp);
-		tmp--;
-	}
-}
-
-int checkBroken(int x){
-	int digitNum = getDigitNum(x);
-	for (int i = 0; i < digitNum; i++){
-		for (int j = 0; j < brokenNum; j++){
-			if (digit[i] == broken[j]) return 1;
-		}
-	}
-	return 0;
-}
-
 
 int main(){
 	scanf("%d", &N);
 	scanf("%d", &brokenNum);
-	for (int i = 0; i < brokenNum; i++)
-		scanf("%d", &broken[i]);
-
-	int result, tempNum; 
-	int diff = 500000; 
-	
-	if (brokenNum == 10){
-		result = abs(N, 100);
+	for (int i = 0; i < brokenNum; i++){
+		int tmp;
+		scanf("%d", &tmp);
+		broken[tmp] = true;
 	}
-	if (brokenNum == 0){
-		result = getDigitNum(N);
-	}
-	else{
-		if (N != 100){
-			for (tempNum = 0;; tempNum++){
-				// initialize digit array
-				for (int i = 0; i < 6; i++)
-					digit[i] = 0;
-				getDigits(tempNum);
-				if (checkBroken(tempNum) == 1) continue;  // if tempNum has a broken button, go to the next case.
-				if (diff >= abs(N, tempNum))
-					diff = abs(N, tempNum);
-				else if (diff < abs(N, tempNum)) break;
-			}
-			if (checkBroken((N - diff)) == 1){
-				result = getDigitNum(N + diff) + diff;
-			}
-			else
-				result = getDigitNum(N - diff) + diff;
-		}
-		else{  //  case : N(channel) = 100  (to reduce the time)
-			result = 0;
+	int diff = abs(N - 100); // only using (+), (-) buttons
+	for (int i = 0; i <= 1000000; i++){
+		int result = checkNumButton(i);
+		if (result > 0){ // if non-possible, then continue.
+			int press = abs(i - N);
+			/*int press = i - N;
+			if (press < 0){
+				press = -press;
+			}*/
+			if (diff > result + press)
+				diff = result + press;
 		}
 	}
-
-	// Compare the case.
-	// Using only (+) & (-) buttons can be smaller.
-	if (result > abs(N, 100))
-		printf("%d\n", abs(N, 100));
-	else
-		printf("%d\n", result);
+	printf("%d\n", diff);
+	return 0;
 }
