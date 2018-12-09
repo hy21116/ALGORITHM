@@ -16,7 +16,7 @@ void print_perm(){
     puts("]");
 }
 
-void btr_perm(int step){
+void perm(int step){
     if(step == R){
         count++;
         print_perm();
@@ -28,7 +28,7 @@ void btr_perm(int step){
         if(!visited[i]){
             visited[i] = 1;
             arr[step] = i;
-            btr_perm(step);
+            perm(step);
             visited[i] = 0;
         }
     }
@@ -48,7 +48,7 @@ int main(){
     N = 3;
     R = 2;
 
-    btr_perm(0);
+    perm(0);
     printf("count : %d\n", count);
     printf("count_using getCnt : %d\n", getCnt_perm(N, R));
 
