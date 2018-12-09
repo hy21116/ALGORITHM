@@ -4,7 +4,6 @@
 
 char src[] = {0, 97, 98, 99, 100, 101};
 int N, R;
-int visited[MAX];
 int arr[MAX];
 int count;
 
