@@ -36,6 +36,18 @@ int getCnt_comb(int n, int r){
     return getCnt_comb(n-1, r-1) + getCnt_comb(n-1, r);
 }
 
+// another method : reduce time
+int dp[MAX][MAX];
+int getCnt_comb_dp(int n, int r){
+    if(r == 0 || n == r)
+        dp[n][r] = 1;
+    
+    if(dp[n][r] == 0)
+        dp[n][r] = getCnt_comb_dp(n-1, r-1) + getCnt_comb_dp(n-1, r);
+
+    return dp[n][r];
+}
+
 
 int main(){
  
@@ -45,6 +57,7 @@ int main(){
     comb(N, R);
     printf("count : %d\n", count);
     printf("count_using getCnt : %d\n", getCnt_comb(N, R));
+    printf("count_using getCnt_dp : %d\n", getCnt_comb_dp(N, R));
 
     return 0;
 }
