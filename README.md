@@ -30,7 +30,7 @@
 - [ ] optimize : 2117_home_protection_service.cpp
 - [ ] pass : 2112_protective_film.cpp
 - [ ] optimize : 2112_protective_film.cpp
-- [ ] pass : 1949_hiking_trail.cpp
+- [X] pass : 1949_hiking_trail.cpp
 - [ ] optimize : 1949_hiking_trail.cpp
 
 ### Basic algorithm
