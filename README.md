@@ -26,7 +26,7 @@
 - [ ] optimize : 2383_lunch_time.cpp
 - [ ] pass : 2382_microbial_isolation.cpp
 - [ ] optimize : 2382_microbial_isolation.cpp
-- [ ] pass : 2117_home_protection_service.cpp
+- [X] pass : 2117_home_protection_service.cpp
 - [ ] optimize : 2117_home_protection_service.cpp
 - [ ] pass : 2112_protective_film.cpp
 - [ ] optimize : 2112_protective_film.cpp
