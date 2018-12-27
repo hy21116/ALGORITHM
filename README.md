@@ -18,7 +18,7 @@
 - [ ] optimize : 5648_atom_extinction.cpp
 - [ ] pass : 5644_wireless_charging.cpp
 - [ ] optimize : 5644_wireless_charging.cpp
-- [ ] pass : 4014_runway_construction.cpp
+- [X] pass : 4014_runway_construction.cpp
 - [ ] optimize : 4014_runway_construction.cpp
 - [X] pass : 4013_strange_magnet.cpp
 - [ ] optimize : 4013_strange_magnet.cpp
