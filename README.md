@@ -24,7 +24,7 @@
 - [ ] optimize : 4013_strange_magnet.cpp
 - [ ] pass : 2383_lunch_time.cpp
 - [ ] optimize : 2383_lunch_time.cpp
-- [ ] pass : 2382_microbial_isolation.cpp
+- [X] pass : 2382_microbial_isolation.cpp
 - [ ] optimize : 2382_microbial_isolation.cpp
 - [X] pass : 2117_home_protection_service.cpp
 - [ ] optimize : 2117_home_protection_service.cpp
