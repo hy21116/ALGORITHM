@@ -16,7 +16,7 @@
 - [ ] optimize : 5650_pinball_game.cpp
 - [ ] pass : 5648_atom_extinction.cpp
 - [ ] optimize : 5648_atom_extinction.cpp
-- [ ] pass : 5644_wireless_charging.cpp
+- [X] pass : 5644_wireless_charging.cpp
 - [ ] optimize : 5644_wireless_charging.cpp
 - [X] pass : 4014_runway_construction.cpp
 - [ ] optimize : 4014_runway_construction.cpp
