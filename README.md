@@ -33,6 +33,12 @@
 - [X] pass : 1949_hiking_trail.cpp
 - [ ] optimize : 1949_hiking_trail.cpp
 
+### Softech
+
+- [ ] MHMH1824_chocolate_and_raisin.cpp --> dp!!
+      [ ] : pass
+      [ ] : optimize 
+
 ### Basic algorithm
 - [ ] : quick sort
 - [ ] : merge sort
