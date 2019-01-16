@@ -70,6 +70,13 @@ MH1824_chocolate_and_raisin.cpp --> dp!!
 - [ ] : optimize
 
 
+### Baekjoon
+
+1697_hide_and_seek,cpp
+- [ ] : pass
+- [ ] : optimize
+
+
 ### Basic algorithm
 
 - [ ] : quick sort
