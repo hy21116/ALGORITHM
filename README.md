@@ -38,7 +38,7 @@
 
 - [ ] MH1824_chocolate_and_raisin.cpp --> dp!!
       - [ ] : pass
-      - [ ] : optimize 
+      - [ ] : optimize
 
 
 ### Basic algorithm
