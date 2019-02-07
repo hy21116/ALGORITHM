@@ -7,7 +7,7 @@
 - [ ] : optimize
 
 5656_break_blocks.cpp
-- [ ] : pass
+- [X] : pass
 - [ ] : optimize
 
 5653_stem_cell.cpp
