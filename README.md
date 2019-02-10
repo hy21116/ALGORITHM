@@ -29,6 +29,7 @@
 4014_runway_construction.cpp
 - [X] : pass
 - [ ] : optimize
+- [X] : 2nd
 
 4013_strange_magnet.cpp
 - [X] : pass
